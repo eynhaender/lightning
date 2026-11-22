@@ -515,14 +515,20 @@ bool json_to_bitcoin_amount(const char *buffer, const jsmntok_t *tok,
 	if (btc == ULONG_MAX && errno == ERANGE)
 		return false;
 	if (end != buffer + tok->end) {
-		/* Expect always 8 decimal places. */
-		if (*end != '.' || buffer + tok->end - end != 9)
+		/* JSON numbers may omit trailing zeros: 1 to 8 decimal places. */
+		const char *frac = end + 1;
+		size_t digits = buffer + tok->end - frac;
+		if (*end != '.' || digits == 0 || digits > 8)
 			return false;
-		sat = strtoul(end+1, &end, 10);
-		if (sat == ULONG_MAX && errno == ERANGE)
-			return false;
-		if (end != buffer + tok->end)
-			return false;
+		sat = 0;
+		for (size_t i = 0; i < 8; i++) {
+			if (i < digits) {
+				if (!cisdigit(frac[i]))
+					return false;
+				sat = sat * 10 + (frac[i] - '0');
+			} else
+				sat *= 10;
+		}
 	} else
 		sat = 0;
 

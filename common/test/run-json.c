@@ -77,6 +77,10 @@ static int test_json_tok_bitcoin_amount(void)
 	do_json_tok_bitcoin_amount("0.12345678", 12345678);
 	do_json_tok_bitcoin_amount("0.01234567", 1234567);
 	do_json_tok_bitcoin_amount("123.45678900", 12345678900);
+	do_json_tok_bitcoin_amount("0.000001", 100);
+	do_json_tok_bitcoin_amount("1.5", 150000000);
+	do_json_tok_bitcoin_amount("0.1", 10000000);
+	do_json_tok_bitcoin_amount("21", 2100000000);
 
 	return 0;
 }
