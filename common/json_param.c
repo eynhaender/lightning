@@ -788,11 +788,11 @@ struct command_result *param_secrets_array(struct command *cmd,
 
 /**
  * segwit_addr_net_decode - Try to decode a Bech32(m) address and detect
- * testnet/mainnet/regtest/signet/testnet4
+ * testnet/mainnet/regtest/signet/testnet4/testnet5
  *
  * This processes the address and returns a string if it is a Bech32
  * address specified by BIP173 or Bech32m as by BIP350. The string is
- * set whether it is testnet/testnet4/signet ("tb"),  mainnet ("bc"),
+ * set whether it is testnet/testnet4/testnet5/signet ("tb"),  mainnet ("bc"),
  * regtest ("bcrt"). It does not check witness version and program size
  * restrictions.
  *

@@ -57,6 +57,7 @@ OPTIONS
 * **--mainnet**
 * **--testnet**
 * **--testnet4**
+* **--testnet5**
 * **--signet**
 * **--regtest**
 

@@ -355,6 +355,9 @@ struct configvar **initial_config_opts(const tal_t *ctx,
 	opt_register_early_noarg("--testnet4",
 				 opt_set_specific_network, "testnet4",
 				 "Alias for --network=testnet4");
+	opt_register_early_noarg("--testnet5",
+				 opt_set_specific_network, "testnet5",
+				 "Alias for --network=testnet5");
 	opt_register_early_noarg("--signet",
 				 opt_set_specific_network, "signet",
 				 "Alias for --network=signet");

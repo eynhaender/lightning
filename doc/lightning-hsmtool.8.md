@@ -104,7 +104,7 @@ the HTLCs to recover from it:
 ```
 
   * *version* is always 1.
-  * *network* is the network name, such as `bitcoin`, `testnet4`, `signet`
+  * *network* is the network name, such as `bitcoin`, `testnet4`, `testnet5`, `signet`
     or `regtest`.
   * *peer\_id* and *channel\_dbid* are the node id of the peer and the `id`
     of the channel in the `channels` table of our database.

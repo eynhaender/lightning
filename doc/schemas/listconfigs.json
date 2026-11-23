@@ -2065,6 +2065,10 @@
             "set": false,
             "source": "default"
           },
+          "testnet5": {
+            "set": false,
+            "source": "default"
+          },
           "signet": {
             "set": false,
             "source": "default"
